@@ -31,3 +31,24 @@ if (hasDriverLicense && hasGoodVision && !isTired) {
 } else {
     console.log('Someone else should drive');
 }
+
+
+
+const day = 'wednesday';
+
+if (day === 'wednesday' || day === 'Tuesday') {
+    console.log('Write code examples');
+}
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+console.log(` Overall Value is ${bill + tip} `);
+
+
+let billl = 275;
+
+if (billl >= 50 && billl <= 300) {
+    const tip = billl * 0.15;
+} else {
+    const tip = billl * 0.20;
+}
+console.log(`Overall Value is ${billl + tip}`);
