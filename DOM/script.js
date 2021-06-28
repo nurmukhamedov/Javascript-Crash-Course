@@ -21,18 +21,4 @@ document.querySelector('.check').addEventListener('click', function() {
             score--;
             document.querySelector('.score').textContent = 0;
         }
-    } else if (guess < secretNumber) {
-
-        if (score > 1) {
-            document.querySelector('.message').textContent = 'Your number is too low';
-            score--;
-            document.querySelector('.score').textContent = score;
-        } else {
-            document.querySelector('.message').textContent = 'You lost the Game';
-            score--;
-            document.querySelector('.score').textContent = 0;
-        }
-
-    }
-
-})
+    } 
