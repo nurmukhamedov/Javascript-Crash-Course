@@ -36,4 +36,12 @@ const jonas = {
     }
 }
 jonas.calcAge();
-jonas.greet(); // Result undefined because arrow function doesn't have its own function
+jonas.greet(); // Result undefined because arrow function doesn't have its own function 
+
+let enteredNumber = +prompt('Raqam kiriting')
+
+const calcNumber = function() {
+    return enteredNumber * enteredNumber;
+
+}
+console.log(calcNumber());
