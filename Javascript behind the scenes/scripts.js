@@ -44,4 +44,19 @@ const calcNumber = function() {
     return enteredNumber * enteredNumber;
 
 }
-console.log(calcNumber());
+console.log(calcNumber()); 
+
+let firstName = 'Jonas';
+let oldFirstName = firstName;
+firstName = 'Milana';
+console.log(firstName, oldFirstName);
+
+const jessica = {
+    name: 'David',
+    age: 42
+}
+const marriedJessica = jessica;
+
+marriedJessica.age = 56;
+
+console.log(marriedJessica, jessica);
