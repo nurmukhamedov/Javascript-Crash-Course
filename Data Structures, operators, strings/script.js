@@ -18,6 +18,9 @@ const restaurant = {
     orderDelivery: function({ starterIndex, mainIndex, time, address }) {
         console.log(`Order recieved ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered ${address} at ${time}`);
     },
+    orderPasta: function(ing1, ing2, ing3) {
+        console.log(`Here is your delicipus pasta with ${ing1}, ${ing2}, ${ing3}`);
+    },
 
     openingHours: {
         thu: {
@@ -35,12 +38,27 @@ const restaurant = {
     },
 };
 
+const ingredients = [prompt("let/'s choose ingredients1"), prompt("choose ingredients2"), prompt("choose ingredients3")];
+console.log(restaurant.orderPasta(...ingredients));
+
 restaurant.orderDelivery({
     time: '22:30',
     address: 'Via Del sole',
     starterIndex: 3,
     mainIndex: 2
 });
+
+const newArray = [...restaurant.mainMenu, 'Gnocci']
+console.log(newArray);
+
+// copy array 
+
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// join 2 array
+const menuNew = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menuNew);
 
 // destructing arrays
 
