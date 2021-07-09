@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 // Data needed for a later exercise
 const flights =
@@ -11,6 +11,9 @@ const restaurant = {
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    order: function(starterIndex, mainIndex) {
+        return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
 
     openingHours: {
         thu: {
@@ -30,12 +33,40 @@ const restaurant = {
 
 // destructing arrays
 
-const arr = [2, 3, 4];
+// const arr = [2, 3, 4];
 
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
-const [x, y, z] = arr;
-console.log(a, b, c);
-console.log(x, y, z);
+// const [x, y, z] = arr;
+// console.log(a, b, c);
+// console.log(x, y, z);
+
+// const [h, g] = restaurant.categories;
+// console.log(h, g);
+// const [h, , g] = restaurant.categories;
+// console.log(h, g);
+
+let [h, g] = restaurant.categories;
+
+// const temp = h;
+// h = g;
+// g = temp;
+// console.log(h, g);
+
+// [h, g] = [g, h];
+// console.log(h, g);
+// //one way switch 
+// const [starter, mainer] = restaurant.order(3, 1);
+// console.log(starter, mainer);
+// // another way switch
+
+// console.log(restaurant.order(2, 0)); 
+
+const nested = [2, 4, [5, 6]];
+const [i, j, [k, l]] = nested;
+console.log(i, j, k, l);
+
+const [p = 1, q = 1, r = 1] = [8, 9]; // it is useful when we work with Apis
+console.log(p, q, r);
