@@ -15,6 +15,10 @@ const restaurant = {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
 
+    orderDelivery: function({ starterIndex, mainIndex, time, address }) {
+        console.log(`Order recieved ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered ${address} at ${time}`);
+    },
+
     openingHours: {
         thu: {
             open: 12,
@@ -30,6 +34,13 @@ const restaurant = {
         },
     },
 };
+
+restaurant.orderDelivery({
+    time: '22:30',
+    address: 'Via Del sole',
+    starterIndex: 3,
+    mainIndex: 2
+});
 
 // destructing arrays
 
@@ -48,7 +59,7 @@ const restaurant = {
 // const [h, , g] = restaurant.categories;
 // console.log(h, g);
 
-let [h, g] = restaurant.categories;
+// let [h, g] = restaurant.categories;
 
 // const temp = h;
 // h = g;
@@ -64,9 +75,40 @@ let [h, g] = restaurant.categories;
 
 // console.log(restaurant.order(2, 0)); 
 
-const nested = [2, 4, [5, 6]];
-const [i, j, [k, l]] = nested;
-console.log(i, j, k, l);
+// const nested = [2, 4, [5, 6]];
+// const [i, j, [k, l]] = nested;
+// console.log(i, j, k, l);
 
-const [p = 1, q = 1, r = 1] = [8, 9]; // it is useful when we work with Apis
-console.log(p, q, r);
+// const [p = 1, q = 1, r = 1] = [8, 9]; // it is useful when we work with Apis
+// console.log(p, q, r);
+
+// Destructuring Objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+// how to change property name?
+const {
+    name: restaurantName,
+    openingHours: hours,
+    categories: tags
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default values
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// mutuate variables
+let a = 885;
+let b = 650;
+
+const obj = { a: 23, b: 27, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested Objects 
+const {
+    fri: { open: o, close: c }
+} = openingHours
+console.log(o, c);
