@@ -164,4 +164,19 @@
 // // short circuiting 
 // console.log(3 || 'Jonas');
 // console.log(undefined || 0);
-// console.log(null || 23);
+// console.log(null || 23); 
+
+let firstName = 'Jonas';
+let oldFirstName = firstName;
+firstName = 'Milana';
+console.log(firstName, oldFirstName);
+
+const jessica = {
+    name: 'David',
+    age: 42
+}
+const marriedJessica = jessica;
+
+marriedJessica.age = 56;
+
+console.log(marriedJessica, jessica);
