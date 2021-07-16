@@ -326,3 +326,32 @@ for (const [day, { open, close }] of entries) {
 //     }
 // }
 // console.log(getLaptop(make1, model1, year1));
+
+// sets
+
+const orderSet = new Set(['Pizza', 'Burger', 'Risotto', 'Pizza', 'KFC', 'Burger', 'Pizza']);
+
+console.log(orderSet.size);
+console.log(orderSet.add('Hot-dog'));
+console.log(orderSet.has('Chocolate'));
+orderSet.delete('Hot-dog');
+console.log(orderSet);
+orderSet.clear();
+console.log(orderSet);
+
+const positions = ['Chef', 'Manager', 'Waiter', 'Chef', 'Waiter', 'Manager'];
+console.log(positions);
+
+const uniquePosition = new Set(positions);
+console.log(uniquePosition.size);
+
+// Map
+const rest = new Map();
+rest.set('name', 'Classiso Italiano');
+rest.set(1, 'Firenze Italia').set('open', 11).set('close', 22).set(true, 'we are open :D').set(false, 'we are close :(');
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(true));
+
+const time = 15;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
