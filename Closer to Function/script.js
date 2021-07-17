@@ -65,4 +65,49 @@ const greet = function(greeting) {
 }
 const heyGreet = greet('Hey');
 heyGreet('Jonas');
-heyGreet('Jane');
+heyGreet('Jane'); 
+
+const lufthansa = {
+    airline: 'Lufthansa',
+    iatacode: 'LH',
+    booking: [],
+    book: function(flightNum, name) {
+        console.log(` ${name} booked seat on ${this.airline} flight ${this.iatacode}${flightNum} `);
+
+        this.booking.push({ flight: `${this.iatacode } ${flightNum}`, name });
+    },
+
+};
+lufthansa.book(256, 'Muhammadrasul');
+lufthansa.book(410, 'Jessica');
+console.log(lufthansa);
+
+const eurowings = {
+    airline: 'Eurowings',
+    iatacode: 'EW',
+    booking: [],
+};
+const book = lufthansa.book;
+
+book.call(eurowings, 25, 'Jack');
+console.log(eurowings);
+
+const uzb = {
+    airline: 'Uzairway',
+    iatacode: 'UZ',
+    booking: [],
+}
+book.call(uzb, 21, 'Jamshid');
+console.log(uzb);
+const flightData = [25, 'Monica'];
+book.call(uzb, ...flightData);
+console.log(uzb);
+
+const bookEw = book.bind(eurowings);
+const bookLh = book.bind(lufthansa);
+const bookUz = book.bind(uzb);
+
+bookEw(245, 'Michael');
+bookLh(256, 'Steven');
+bookUz(145, 'John');
+
