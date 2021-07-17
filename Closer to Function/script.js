@@ -1,4 +1,4 @@
- 
+'use strict' 
 const Arithmetics = {
     add: function(a, b) {
         return `${a} + ${b} = ${a+b}`;
@@ -109,5 +109,31 @@ const bookUz = book.bind(uzb);
 
 bookEw(245, 'Michael');
 bookLh(256, 'Steven');
-bookUz(145, 'John');
+bookUz(145, 'John'); 
+
+lufthansa.planes = 300;
+lufthansa.buyplanes = function() {
+    console.log(this);
+
+    this.planes++;
+    console.log(this.planes);
+}
+
+document.querySelector('.buy').addEventListener('click', lufthansa.buyplanes.bind(lufthansa));
+
+const addTax = function(rate) {
+    return function(value) {
+        return value + value * rate;
+    }
+}
+const addVat = addTax(0.23);
+console.log(addVat(100));
+
+// another way with bind
+
+const addTax2 = (rate, value) => value + value * rate;
+
+// console.log(addTax2(0.1, 200)); 
+const addVat2 = addTax2.bind(null, 0.23);
+console.log(addVat2(500));
 
