@@ -49,3 +49,20 @@ function isOddNumber(number) {
 
 const oddNumber = numbers.filter(isOddNumber);
 console.log(oddNumber);
+const arrgreet = (arrgreeting) => {
+    return (arrname) => {
+        console.log(` ${arrgreeting} ${arrname} `);
+    }
+}
+const arrheyGreet = arrgreet('Hey');
+arrheyGreet('Don');
+arrheyGreet('Mike');
+
+const greet = function(greeting) {
+    return function(name) {
+        console.log(` ${greeting} ${name} `);
+    }
+}
+const heyGreet = greet('Hey');
+heyGreet('Jonas');
+heyGreet('Jane');
