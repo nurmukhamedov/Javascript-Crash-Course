@@ -38,4 +38,25 @@ const movementDescription = movements.map(function(mov, i, arr) {
         return `You withdrawed ${i + 1}: ${mov} `;
     }
 });
-console.log(...movementDescription);
+console.log(...movementDescription); 
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const deposit = movements.filter(function(mov) {
+    return mov > 0;
+});
+console.log(deposit);
+
+const depositFor = [];
+
+for (const mov of movements)
+    if (mov > 0) {
+        depositFor.push(mov);
+    };
+console.log(depositFor);
+
+
+const withdrawls = movements.filter(function(mov) {
+    return mov < 0;
+});
+console.log(withdrawls);
