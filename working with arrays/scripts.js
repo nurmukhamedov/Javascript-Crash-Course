@@ -61,6 +61,17 @@ const withdrawls = movements.filter(function(mov) {
 });
 console.log(withdrawls);   
 
+const array1 = [1, 2, 3, 4];
+
+const reduceFun = function(accum, currentVal) {
+    return accum + currentVal;
+}
+console.log(array1.reduce(reduceFun, 5));
+
+const reduceFunRes = array1.reduce(function(acc, currVal) {
+    return acc + currVal;
+});
+console.log(reduceFunRes);
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const balance = movements.reduce(function(acc, val, i, arr) {
@@ -73,3 +84,12 @@ let balance2 = 0;
 
 for (const mov of movements) balance2 += mov;
 console.log(balance2);
+
+const arr1 = [1, 2, 3, [4, 5, [6, 7]]];
+
+const arrFlat = arr1.flat(2);
+console.log(arrFlat);
+
+const namesPupils = ['jonas', 'Bob', 'Alex', 'Jhonny'];
+
+console.log(namesPupils.sort());
