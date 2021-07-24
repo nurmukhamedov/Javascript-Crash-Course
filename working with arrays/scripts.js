@@ -92,4 +92,14 @@ console.log(arrFlat);
 
 const namesPupils = ['jonas', 'Bob', 'Alex', 'Jhonny'];
 
-console.log(namesPupils.sort());
+console.log(namesPupils.sort()); 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+movements.sort((a, b) => {
+    if (a > b) return 1;
+    if (b > a) return -1;
+})
+console.log(movements);
+const myGaps = ['Hello', 'World']
+setTimeout(() => {
+    console.log(`Hello World`);
+}, 3000);
