@@ -59,4 +59,17 @@ console.log(depositFor);
 const withdrawls = movements.filter(function(mov) {
     return mov < 0;
 });
-console.log(withdrawls);
+console.log(withdrawls);   
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const balance = movements.reduce(function(acc, val, i, arr) {
+    console.log(`Iteration ${i} ${acc}`);
+    return acc + val;
+})
+console.log(balance);
+
+let balance2 = 0;
+
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
